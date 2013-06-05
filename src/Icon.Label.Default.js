@@ -17,13 +17,19 @@ L.Icon.Label.Default = L.Icon.Label.extend({
 		
 		//label's text component, if this is null the element will not be created
 		labelText: null,
-		
+
+        //show closeButton on label or not
+        closeButton: false,
+
+        //fires when closeButton clicked
+        onCloseButtonClick: undefined,
+
 		/* From L.Icon.Default */
-		iconUrl: L.Icon.Default.imagePath + '/marker-icon.png',
+		iconUrl: L.ROOT_URL + 'images/marker.png',
 		iconSize: new L.Point(25, 41),
 		popupAnchor: new L.Point(0, -33),
 
-		shadowUrl: L.Icon.Default.imagePath + '/marker-shadow.png',
+		shadowUrl: L.ROOT_URL + 'images/marker-shadow.png',
 		shadowSize: new L.Point(41, 41)
 	}
 });
