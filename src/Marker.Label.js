@@ -19,5 +19,9 @@ L.Marker.Label = L.Marker.extend({
 
 	hideLabel: function () {
 		this.options.icon.hideLabel(this._icon);
-	}
+	},
+
+    setIconText: function (text) {
+        this.options.icon.setIconText(this._icon, text);
+    }
 });

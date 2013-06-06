@@ -41,7 +41,7 @@
 	},
 
 	updateLabel: function (icon, text) {
-        text = $.trim(text) || this.options.labelText;
+        text = L.Util.trim((text || "") + "") || this.options.labelText;
 
         this.options.labelText = text;
 
@@ -70,7 +70,19 @@
 		icon.childNodes[1].style.display = 'none';
 	},
 
+    setIconText: function (icon, text) {
+        this.options.iconText = L.Util.trim(text + "");
+
+        if (icon) {
+            icon.childNodes[0].childNodes[0].innerHTML = this.options.iconText;
+        }
+    },
+
 	_createLabel: function (img) {
+        var iconText = L.DomUtil.create('div', 'leaflet-marker-icon-text', img);
+
+        iconText.innerHTML = L.Util.trim((this.options.iconText || "") + "");
+
 		var iconWrapper = document.createElement('div');
         iconWrapper.appendChild(img);
 
@@ -189,7 +201,11 @@ L.Marker.Label = L.Marker.extend({
 
 	hideLabel: function () {
 		this.options.icon.hideLabel(this._icon);
-	}
+	},
+
+    setIconText: function (text) {
+        this.options.icon.setIconText(this._icon, text);
+    }
 });
 
 }(window, document));
