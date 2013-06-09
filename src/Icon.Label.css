@@ -4,18 +4,38 @@
 
 .leaflet-marker-iconlabel {
 	background: #fff;
-	-moz-border-radius: 7px; 
-	-webkit-border-radius: 7px;
-	border-radius: 7px;
-	-moz-box-shadow: 0 3px 10px #888;
-	 -webkit-box-shadow: 0 3px 14px #999;
+	border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 3px 10px #888;
+	-webkit-box-shadow: 0 3px 14px #999;
 	box-shadow: 0 3px 10px #888;
 	display: block;
 	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
-	padding: 4px 6px;
 	-ms-user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	user-select: none;
 	white-space: nowrap;
+    border: solid 1px gray;
+    padding: 3px;
+}
+
+.leaflet-marker-iconlabel > div {
+    display: inline-block;
+}
+
+.leaflet-marker-iconlabel-closebutton {
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-image: url(close-gray.png);
+    margin-left: 5px;
+}
+
+.leaflet-marker-icon-text {
+    text-align: center;
+    font-size: 0.8em;
+    margin: 1px 0 0 -1px;
 }
